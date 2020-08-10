@@ -1,0 +1,7 @@
+compile : goal is : compile
+
+code-review: goal is : --P metrics pmd:pmd  #Here we need pmd plugin to view the output of xml files which are stored under target/pmd.xml
+
+QA-Test : goal is : test #Here we need test result trend will get this by post build "Publish JUnit test result report" and need to select the xml file target/surefire-reports/*.xml
+
+QA-metric : goal is : cobertura:cobertura -Dcobertura.report.format=xml # Here we need cobertura plugin to view the result select "Public Cobertura Coverage Report" under post build which are stored under target/site/cobertura
